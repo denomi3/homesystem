@@ -1,0 +1,321 @@
+
+body
+{
+	background: lightslategray;
+}
+
+.control_unit_container_weather{
+	border: 0px;
+	background: #019de7;
+}
+
+.control_unit_container_weather_page{
+	border: 0px;
+	background: #33b1eb;
+}
+
+.control_unit_container_control{
+	border: 0px;
+	background: dimgray;
+}
+
+.control_unit_container_camera{
+	border: 0px;
+	background: chocolate;
+}
+
+.control_unit_container_events{
+	border: 0px;
+	background: yellowgreen;
+}
+
+.control_unit_container_scenarios{
+	border: 0px;
+	background: blueviolet;
+}
+
+.control_unit_container_system_log{
+	border: 0px;
+	background: darkslategrey;
+}
+
+.control_unit_container_media{
+	border: 0px;
+	background: brown;
+}
+
+.control_unit_container_security{
+	border: 0px;
+	background: teal;
+}
+
+.control_unit_container_settings{
+	border: 0px;
+	background: darkgreen;
+}
+
+.control_unit_container_locations{
+	border: 0px;
+	background: cornflowerblue;
+}
+
+.control_unit_container_right{
+	border: 0px;
+	background: black;
+}
+
+.control_unit_container_left{
+	border: 0px;
+	background: inherit;
+}
+
+.header_style{
+	color: white;
+	font-size: 3.5em;  
+	font-family: ARIAL;
+	/* margin: auto; */
+}
+
+.text_style{
+	color: white;
+	font-size: 3em;
+	font-family: arial;
+}
+
+.img_style{
+	height:180px;
+}
+
+.parent{
+    word-wrap: break-word;
+	text-align: center;
+}
+
+.child{
+	display: inline-block;
+	vertical-align: middle;
+	/* zoom: 1; */
+	margin: 0 0.5em 0 0.5em;
+    *display:inline; /* ��� �� 6, 7 */
+}
+
+.main_div_unit{
+	margin-top: 20px;
+	padding: 0 .7em;
+}
+
+td{
+    font-size: 1.6em;
+    font-family: ARIAL;
+    color: white;
+    vertical-align: top;
+}
+
+.td_date{
+    /* width: 15%; */
+    padding-right: 80px;
+}
+
+.weather_header2{
+    color: white; 
+    font-size: 1.6em; 
+    font-family: arial;
+}
+
+.weather_header{
+    color: white; 
+    font-size: 2.0em; 
+    font-family: arial;
+}
+
+.weather_text2{
+    color: white; 
+    font-size: 1.2em; 
+    font-family: arial;
+    padding-bottom: 3%;
+}
+
+.weather_text{
+color: white;
+font-size: 3.8em;
+font-family: arial;
+padding-bottom: 3%;
+}
+
+.dev_switch{
+    color:white;
+    font-size: 1.5em;
+    font-family: ARIAL;
+    float:left;
+    margin-right: 10;
+}
+
+/*2 layer page-----------------------------------------------------------------------*/
+html,
+body {
+    height:100%;
+    }
+body {
+    margin:0;
+    padding:0;
+    }
+
+#stretcher {
+    position:absolute;
+    right:0;
+    bottom:0;
+    z-index:0;
+    width:20%;
+    background-color:black;
+    color:inherit;
+}
+html>body #stretcher {
+    top:0;
+    }
+* html #stretcher {
+    height:1000em;
+    }
+
+#middle {
+    position:relative;
+    z-index:4;
+    overflow:hidden;
+    width:100%;
+    min-width:640px;
+    min-height:100%;
+    color:inherit;
+    }
+*html #middle {
+    overflow:visible;
+    height:100%;
+    }
+
+    #content {
+        position:relative;
+        z-index:1;
+        float:left;
+        padding:1.5em 2%;
+        width:71%;
+        }
+    * html #content {
+        width:60.8%;
+        }
+    *+html #content {
+        width:60.8%;
+        }
+
+    #sidebar {
+        position:relative;
+        z-index:1;
+        float:right;
+        padding:1.5em 2%;
+        width:15%;
+        background-color: black;
+        /* color:inherit; */
+        }
+/*end 2 layer page-----------------------------------------------------------------------*/
+
+
+.switch {
+  border: none;
+  margin-bottom: 1.5rem;
+  outline: 0;
+  padding: 0;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  .switch label {
+    background: #DDDDDD;
+    color: transparent;
+    cursor: pointer;
+    display: block;
+    /* border: solid; */
+    /* border: solid; */
+    margin-bottom: 1rem;
+    position: relative;
+    text-indent: 100%;
+    width: 6rem;/*4rem*/
+    height: 2rem;
+    transition: left 0.15s ease-out; }
+  .switch input {
+    left: 10px;
+    opacity: 0;
+    padding: 0;
+    position: absolute;
+    top: 9px; }
+    .switch input + label {
+      margin-left: 0;
+      margin-right: 0; }
+  .switch label:after {
+    background: #FFFFFF;
+    content: "";
+    display: block;
+    height: 1.5rem;
+    left: .25rem;
+    position: absolute;
+    top: .25rem;
+    width: 1.5rem;
+    -webkit-transition: left 0.15s ease-out;
+    -moz-transition: left 0.15s ease-out;
+    -o-transition: translate3d(0, 0, 0);
+    transition: left 0.15s ease-out;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  .switch input:checked + label {
+    background: #47DD49; }
+  .switch input:checked + label:after {
+    left: 2.25rem; }
+  .switch label {
+    height: 2rem;
+    width: 6rem; /*4rem*/}
+  .switch label:after {
+    height: 1.5rem;
+    width: 1rem;/*1.5rem*/ }
+  .switch input:checked + label:after {
+    left: 4.8rem; /*2.25rem*/}
+  .switch label {
+    /* color: transparent; */
+    background: gray; }
+  .switch label:after {
+    background: #FFFFFF; }
+  .switch input:checked + label {
+    background: #47DD49; }
+  .switch.large label {
+    height: 2.5rem;
+    width: 5rem; }
+  .switch.large label:after {
+    height: 2rem;
+    width: 2rem; }
+  .switch.large input:checked + label:after {
+    left: 2.75rem; }
+  .switch.small label {
+    height: 1.75rem;
+    width: 3.5rem; }
+  .switch.small label:after {
+    height: 1.25rem;
+    width: 1.25rem; }
+  .switch.small input:checked + label:after {
+    left: 2rem; }
+  .switch.tiny label {
+    height: 1.5rem;
+    width: 3rem; }
+  .switch.tiny label:after {
+    height: 1rem;
+    width: 1rem; }
+  .switch.tiny input:checked + label:after {
+    left: 1.75rem; }
+  .switch.radius label {
+    border-radius: 4px; }
+  .switch.radius label:after {
+    border-radius: 3px; }
+  .switch.round {
+    border-radius: 1000px; }
+    .switch.round label {
+      border-radius: 2rem; }
+    .switch.round label:after {
+      border-radius: 2rem; }
