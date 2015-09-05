@@ -1,9 +1,9 @@
-<div class="container_12" style="min-width: 940px;">
+<div class="container_12" style="min-width: 960px;">
     <div class="grid_12">
 	<div style="margin-top: 1%;">
             <a href="/" style="text-decoration: none;">
-		<img src="images/arrow.png" style="width: 65px;float: left;margin-right: 15px;">
-		<span class="header_style" style="font-size: 3.5em;font-family: ARIAL;">События</span>
+		<img src="images/arrow.png" style="width: 46px;float: left;margin-right: 15px;">
+		<span class="header_style" style="font-size: 2.5em;font-family: ARIAL;">События</span>
             </a>
 	</div>
     </div>
@@ -11,11 +11,10 @@
     <div class="clear"></div>
 			
     <div class="grid_12">
-        <br><br>
         <?php
             if(isset($data['family']))
             {
-                echo "<p style=\"font-size: 2.2em;font-family: ARIAL;color: white;vertical-align: top;\">Ближайший семейные праздники:</p><br>";
+                echo "<p style=\"font-size: 2.0em;font-family: ARIAL;color: white;vertical-align: top;\">Ближайший семейные праздники:</p>";
             }
         ?>
         <table cellpadding="5">
@@ -39,11 +38,10 @@
                     }
                 ?>
         </table>
-        <br><br>
         <?php
             if(isset($data['common']))
             {
-                echo "<p style=\"font-size: 2.2em;font-family: ARIAL;color: white;vertical-align: top;\">Праздники:</p><br>";
+                echo "<p style=\"font-size: 2.0em;font-family: ARIAL;color: white;vertical-align: top;\">Праздники:</p>";
             }
         ?>
          <table cellpadding="5">

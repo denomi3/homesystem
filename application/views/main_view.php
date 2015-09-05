@@ -1,4 +1,4 @@
-<div class="container_12" style="min-width: 940px;">
+<div class="container_12" style="min-width: 960px;">
 		
 			<div class="grid_12">
 				<div style="margin-top: 1%;">

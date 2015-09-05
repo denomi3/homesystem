@@ -1,9 +1,8 @@
-﻿<style>
+<style>
     body{
         background: #019de7;
     }
 </style>
-
 <?php
      $monthAr = array(
         1 => array('Январь', 'Января'),
@@ -20,13 +19,12 @@
         12=> array('Декабрь', 'Декабря')
   );
 ?>
-
-<div class="container_12" style="min-width: 940px;">
+<div class="container_12" style="min-width: 960px;">
     <div class="grid_12">
 	<div style="margin-top: 1%;">
             <a href="/" style="text-decoration: none;">
-		<img src="images/arrow.png" style="width: 65px;float: left;margin-right: 15px;">
-		<span class="header_style" style="font-size: 3.5em;font-family: ARIAL;">Погода</span>
+		<img src="images/arrow.png" style="width: 46px;float: left;margin-right: 15px;">
+		<span class="header_style" style="font-size: 2.5em;font-family: ARIAL;">Погода</span>
             </a>
 	</div>
     </div>
@@ -34,57 +32,49 @@
     <div class="clear"></div>
 	
     
-        <div class="grid_6">
+        <div class="grid_8">
             <div class="parent control_unit_container_weather_page main_div_unit">
                 <?php
-                
-                $first = array_shift($data);
-                
-                echo '<div class="child">';
-				//<img class="img_style" src="images/weather_white.png">
-		echo '</div>';
-                echo '<div class="child">';
-                echo '<br />';
-                    echo '<div class="weather_header">';
-			echo 'Сегодня: '. $first['day'].' '.$monthAr[(int)date('m')][1].', '.$first['day_of_week'];
-                    echo '</div>';
-		echo '</div>';
-                echo '<br />';
-                $today = $first['weather'][1];
-
-                        echo "<br /><br />";
-                        echo '<table>';
-                        echo '<tr>';
-                            echo '<td>';
-                                //echo '<img src="http://yandex.st/weather/1.1.78/i/icons/48x48/'.$today['image'].'.png "width="200" height="200"/>';
-                                echo '<img src="images/weather/'.$today['image'].'.png "width="200" height="200" style="margin-top:-50px;"/>';
-                                echo '<p class="" style="font-size: 0.8em;margin-bottom: 20px;">'.$today['weather_type'].'</p>';
-                            echo '</td>';
-
-                            echo '<td>';
-                                echo '<p class="weather_text" style="margin-left: 25px;">'.$today['temp_avg'].'</p>';
-                                
-                            echo '</td>';
-
-                            echo '<td style="text-align: left;">';
-                                echo '<p class="" style="margin-bottom: 3%;margin-left: 25px;font-size: 0.8em; font-family: arial;">Скорость ветра: '.$today['wind_speed'].' м/с</p>';
-                                echo '<p class="" style="margin-bottom: 3%;margin-left: 25px;font-size: 0.8em; font-family: arial;">Влажность: '.$today['humidity'].' %</p>';
-                                echo '<p class="" style="margin-bottom: 3%;margin-left: 25px;font-size: 0.8em; font-family: arial;">Давление: '.$today['pressure'].' мм рт. с.</p>';
-                                echo '<p class="" style="margin-bottom: 3%;margin-left: 25px;font-size: 0.8em; font-family: arial;">Ночь: '.$first['weather'][3]['temp_from'].'...'.$first['weather'][3]['temp_to'].'</p>';
-                            echo '</td>';
-                        echo '</tr>';
-                        echo '</table>';
-
+                    $first = array_shift($data);
+                    $today = $first['weather'][1];
                 ?>
-			
-			
+                
+                <div class="child">
+                <br />
+                    <div class="weather_header">
+                        <?php
+                            echo 'Сегодня: '. $first['day'].' '.$monthAr[(int)date('m')][1].', '.$first['day_of_week'];
+                        ?>
+                    </div>
+		</div>
+                <br />
+                        <div class="grid_2 alpha">
+                            <?php
+                                echo '<img src="images/weather/'.$today['image'].'.png "width="130" height="130"/>';
+                                echo '<p class="weather_text3" style="">'.$today['weather_type'].'</p>';
+                            ?>
+                        </div>
+                        <div class="grid_2">
+                            <?php
+                                echo '<p class="weather_text">'.$today['temp_avg'].'</p>';
+                            ?>
+                        </div>
+                        <div class="grid_4 omega">
+                            <?php
+                                echo '<br /><br />';
+                                echo '<p class="weather_text3" style="text-align: left;">Скорость ветра: '.$today['wind_speed'].' м/с</p>';
+                                echo '<p class="weather_text3" style="text-align: left;">Влажность: '.$today['humidity'].' %</p>';
+                                echo '<p class="weather_text3" style="text-align: left;">Давление: '.$today['pressure'].' мм рт. с.</p>';
+                                echo '<p class="weather_text3" style="text-align: left;">Ночь: '.$first['weather'][3]['temp_from'].'...'.$first['weather'][3]['temp_to'].'</p>';
+                            ?>
+                        </div> 
+                <div class="clear"></div>
 		</div>
 	</div>
     
-        <div class="grid_6"></div>
+        <div class="grid_4"></div>
     
         <div class="clear"></div>
-        <br>
        
         <?php
                 foreach ($data as $key => $value) 

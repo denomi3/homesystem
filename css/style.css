@@ -71,15 +71,16 @@ body
 
 .header_style{
 	color: white;
-	font-size: 3.5em;  
+	font-size: 2.5em;  
 	font-family: ARIAL;
 	/* margin: auto; */
 }
 
 .text_style{
 	color: white;
-	font-size: 3em;
+	font-size: 2em;
 	font-family: arial;
+	margin-top: -1em;
 }
 
 .img_style{
@@ -101,11 +102,11 @@ body
 
 .main_div_unit{
 	margin-top: 20px;
-	padding: 0 .7em;
+	/* padding: 0 .7em; */
 }
 
 td{
-    font-size: 1.6em;
+    font-size: 1.3em;
     font-family: ARIAL;
     color: white;
     vertical-align: top;
@@ -135,16 +136,25 @@ td{
     padding-bottom: 3%;
 }
 
+.weather_text3{
+   font-family: arial;
+   color:white;
+   font-size: 1.2em;
+   margin:0px; 
+}
+
 .weather_text{
 color: white;
 font-size: 3.8em;
 font-family: arial;
-padding-bottom: 3%;
+padding-bottom: 0%;
 }
+
+
 
 .dev_switch{
     color:white;
-    font-size: 1.5em;
+    font-size: 1.0em;
     font-family: ARIAL;
     float:left;
     margin-right: 10;
@@ -271,13 +281,13 @@ html>body #stretcher {
   .switch input:checked + label:after {
     left: 2.25rem; }
   .switch label {
-    height: 2rem;
-    width: 6rem; /*4rem*/}
+    height: 1.4rem;
+    width: 3rem; /*4rem*/}
   .switch label:after {
-    height: 1.5rem;
-    width: 1rem;/*1.5rem*/ }
+    height: 0.9rem;
+    width: 0.8rem;/*1.5rem*/ }
   .switch input:checked + label:after {
-    left: 4.8rem; /*2.25rem*/}
+    left: 1.8rem; /*2.25rem*/}
   .switch label {
     /* color: transparent; */
     background: gray; }
