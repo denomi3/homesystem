@@ -2,10 +2,26 @@
     
     <style>
         .cnv{height: 560px;width: 760px; position: relative;background:url(/images/home_cheme_plan.png)  no-repeat;
-    -moz-background-size: 100%; /* Firefox 3.6+ */
-    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
-    -o-background-size: 100%; /* Opera 9.6+ */
-    background-size: 100%; /* Современные браузеры */}
+            -moz-background-size: 100%; /* Firefox 3.6+ */
+            -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+            -o-background-size: 100%; /* Opera 9.6+ */
+            background-size: 100%; /* Современные браузеры */}
+        .lightcontrol.ON {
+            position: relative;
+            background:url(/images/light_on.png) no-repeat;
+            -moz-background-size: 100%; /* Firefox 3.6+ */
+            -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+            -o-background-size: 100%; /* Opera 9.6+ */
+            background-size: 100%; /* Современные браузеры */
+            box-shadow: 0px 0px 13px 16px rgba(255, 191, 0, 0.3)
+        }
+        .lightcontrol.OFF {position: relative;background:url(/images/light_off.png) no-repeat;
+            -moz-background-size: 100%; /* Firefox 3.6+ */
+            -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+            -o-background-size: 100%; /* Opera 9.6+ */
+            background-size: 100%; /* Современные браузеры */
+        }
+        .lightcontrol {position: absolute;height: 25px;width: 25px;border-radius: 50%;}
     </style>
 		
 			<div class="grid_10">
@@ -18,40 +34,48 @@
                             
                             <div class="control_unit cnv">
                             <div id="controls_light" style="display: block;">
-                                    <a class="lightcontrol on" data-param="" style="position: absolute;left: 214px;top: 85px;" href='#'><img title="Свет в детской" style="width:30%;" src="images/light_on.png"></a>
-                                    <a class="lightcontrol on" data-param="http://192.168.0.15/sec/?pt=7&amp;cmd=10:2" style="position: absolute;left: 467px;top: 85px;" href="#"><img title="Свет в гостинной" style="width:30%;" src="images/light_on.png"></a>
-                                    <a class="lightcontrol on" data-param='http://192.168.0.15/sec/?pt=7&amp;cmd=11:2' style="position: absolute;left: 191px;top: 244px;" href="#"><img title="Свет в спальне" style="width:30%" src="images/light_on.png"></a>
-                                    <a class="lightcontrol on" data-param='http://192.168.0.15/sec/?pt=7&amp;cmd=12:2' style="position: absolute;left: 329px;top: 261px;" href="#"><img title="Свет в холе" style="width:30%;" src="images/light_on.png"></a>
-                                    <a class="lightcontrol on" data-param='http://192.168.0.15/sec/?pt=7&amp;cmd=13:2' style="position: absolute;left: 329px;top: 391px;" href="#"><img title="Свет в прихожей" style="width:30%;" src="images/light_on.png"></a>
-                                    <a class="lightcontrol on" data-param='http://192.168.0.15/sec/?pt=7&amp;cmd=7:2' style="position: absolute;left: 249px;top: 439px;" href="#"><img title="Свет в ванной" style="width:30%;" src="images/light_on.png"></a>
-                                    <a class="lightcontrol on" data-param='http://192.168.0.15/sec/?pt=7&amp;cmd=8:2' style="position: absolute;left: 188px;top: 439px;" href="#"><img title="Свет в туалете" style="width:30%;" src="images/light_on.png"></a>
-                                    <a class="lightcontrol on" data-param='http://192.168.0.15/sec/?pt=7&amp;cmd=9:2' style="position: absolute;left: 91px;top: 407px;" href="#"><img title="Свет на кухне" style="width:30%;" src="images/light_on.png"></a>
+                                <? $state_14_07 = file_get_contents('http://192.168.0.14/sec/?pt=7&cmd=get'); ?>
+                                <a title="Свет в детской" class="lightcontrol <?php echo $state_14_07; ?>" data-param="" style="position: absolute;left: 222px;top: 90px;" href='#'></a>
+                                <? $state_15_10 = file_get_contents('http://192.168.0.15/sec/?pt=10&cmd=get'); ?>
+                                <a title="Свет в гостинной" class="lightcontrol <?php echo $state_15_10; ?>" data-param="http://192.168.0.15/sec/?cmd=10:2" style="position: absolute;left: 467px;top: 90px;" href="#"></a>
+                                <? $state_15_11 = file_get_contents('http://192.168.0.15/sec/?pt=11&cmd=get'); ?>
+                                <a title="Свет в спальне" class="lightcontrol <?php echo $state_15_11; ?>" data-param='http://192.168.0.15/sec/?cmd=11:2' style="position: absolute;left: 199px;top: 253px;" href="#"></a>
+                                <? $state_15_12 = file_get_contents('http://192.168.0.15/sec/?pt=12&cmd=get'); ?>
+                                <a title="Свет в холе" class="lightcontrol <?php echo $state_15_12; ?>" data-param='http://192.168.0.15/sec/?cmd=12:2' style="position: absolute;left: 331px;top: 261px;" href="#"></a>
+                                <? $state_15_13 = file_get_contents('http://192.168.0.15/sec/?pt=13&cmd=get'); ?>
+                                <a title="Свет в прихожей" class="lightcontrol <?php echo $state_15_13; ?>" data-param='http://192.168.0.15/sec/?cmd=13:2' style="position: absolute;left: 345px;top: 413px;" href="#"></a>
+                                <? $state_15_07 = file_get_contents('http://192.168.0.15/sec/?pt=7&cmd=get'); ?>
+                                <a title="Свет в ванной" class="lightcontrol <?php echo $state_15_07; ?>" data-param='http://192.168.0.15/sec/?cmd=7:2' style="position: absolute;left: 256px;top: 444px;" href="#"></a>
+                                <? $state_15_08 = file_get_contents('http://192.168.0.15/sec/?pt=8&cmd=get'); ?>
+                                <a title="Свет в туалете" class="lightcontrol <?php echo $state_15_08; ?>" data-param='http://192.168.0.15/sec/?cmd=8:2' style="position: absolute;left: 196px;top: 444px;" href="#"></a>
+                                <? $state_15_09 = file_get_contents('http://192.168.0.15/sec/?pt=9&cmd=get'); ?>
+                                <a title="Свет на кухне" class="lightcontrol <?php echo $state_15_09; ?>" data-param='http://192.168.0.15/sec/?cmd=9:2' style="position: absolute;left: 98px;top: 413px;" href="#"></a>
                             </div>
 
                             <div id="controls_temperature" style="display: none;">
-                                   <a class="lightcontrol" data-param='' style="position:absolute;left: 329px;top: 261px;" href="#"><img title="Температур в квартире" style="width:30%;" src="images/temperature.png"></a>
+                                <a title="Температур в квартире" class="tempcontrol" data-param='' style="position:absolute;left: 329px;top: 261px;" href="#"></a>
                             </div>
 
                             <div id="controls_devices" style="display: none;">
-                                    <a class="lightcontrol" data-param='' style="position: absolute;left: 149px;top: 490px;" href="#"><img title="Вода, кран" src="images/water.png" style="width:30%;"></a>
-                                    <a class="lightcontrol" data-param='' style="position: absolute;left: 29px;top: 428px;" href="#"><img title="Жалюзи на кухне" src="images/blinds.png" style="width:30%;"></a>
-                                    <a class="lightcontrol" data-param='' style="position: absolute;left: 130px;top: 79px;" href="#"><img title="Жалюзи в детской" src="images/blinds.png" style="width:30%;"></a>
-                                    <a class="lightcontrol" data-param='' style="position: absolute;left: 580px;top: 79px;" href="#"><img title="Жалюзи в зале" src="images/blinds.png" style="width:30%;"></a>
-                                    <a class="lightcontrol" data-param='' style="position: absolute;left: 129px;top: 257px;" href="#"><img title="Жалюзи в спальне" src="images/blinds.png" style="width:30%;"></a>
+                                <a title="Вода, кран" class="devcontrol" data-param='' style="position: absolute;left: 149px;top: 490px;" href="#"></a>
+                                <a title="Жалюзи на кухне" class="devcontrol" data-param='' style="position: absolute;left: 29px;top: 428px;" href="#"></a>
+                                <a title="Жалюзи в детской" class="devcontrol" data-param='' style="position: absolute;left: 130px;top: 79px;" href="#"></a>
+                                <a title="Жалюзи в зале" class="devcontrol" data-param='' style="position: absolute;left: 580px;top: 79px;" href="#"></a>
+                                <a title="Жалюзи в спальне" class="devcontrol" data-param='' style="position: absolute;left: 129px;top: 257px;" href="#"></a>
                             </div>
 
                             <div id="controls_security" style="display: none;">
-                                    <a class="lightcontrol" data-param='' style="position: absolute;left: 338px;top: 412px;" href="#"><img title="Охрана входной двери" src="images/security.png" style="width:30%;"></a>
-                                    <a class="lightcontrol" data-param='' style="position: absolute;left: 29px;top: 428px;" href="#"><img title="Сигнализация на кухне"  src="images/security.png" style="width:30%;"></a>
-                                    <a class="lightcontrol" data-param='' style="position: absolute;left: 130px;top: 79px;" href="#"><img title="Сигнализация в детской"  src="images/security.png" style="width:30%;"></a>
-                                    <a class="lightcontrol" data-param='' style="position: absolute;left: 580px;top: 79px;" href="#"><img title="Сигнализация зале"  src="images/security.png" style="width:30%;"></a>
+                                <a title="Охрана входной двери" class="lightcontrol" data-param='' style="position: absolute;left: 338px;top: 412px;" href="#"></a>
+                                <a title="Сигнализация на кухне" class="lightcontrol" data-param='' style="position: absolute;left: 29px;top: 428px;" href="#"></a>
+                                <a title="Сигнализация в детской" class="lightcontrol" data-param='' style="position: absolute;left: 130px;top: 79px;" href="#"></a>
+                                <a title="Сигнализация зале" class="lightcontrol" data-param='' style="position: absolute;left: 580px;top: 79px;" href="#"></a>
                             </div>
                             
                         </div>
                             
 			</div>
                         <div class="grid_2">
-                            <div class="control_unit_regulators_panel" style="margin-top:50px">
+                            <div class="control_unit_regulators_panel" style="margin-top: 70px;padding-left: 10px;margin-left: -15px;border-left: solid white 2px;">
                             <div class="dev_switch">
                                 Освещение
                             </div>
@@ -93,10 +117,50 @@
    $(document).ready(function(){
        
        $(".lightcontrol").click(function(){
-           var $this = $(this);
-           var link = $this.data('param');
-           $.get(link);
+            var lamp = $(this);
+            //var label = lamp.attr("label");
+            var action = 0;
+            if ( lamp.hasClass("OFF") )
+            {
+                action = 1;
+		lamp.removeClass("OFF").addClass("ON");
+            }
+            else
+            {
+		action = 0;
+		lamp.removeClass("ON").addClass("OFF");
+            }
+            
+            var link = lamp.data('param');
+            $.get(link);
+
+            //$.get("key.php?key_label=" +label + "&key_pio=" + action, function(data){ 
+		//$.get("ab-data.php?p=keys", function(data)
+		//{
+                    //$("#keys").html(data);
+		//});
+            //});
        });
+       
+       
+       
+       	//setInterval(function(){
+		//var device_list = [2];
+		//for ( j = 0; j < device_list.length; j++ )
+		//{
+			//$.get('megad-ajax.php', {id: device_list[j], get_all : 1}, function(data)
+			//{
+			//	state_all = data.split(';');
+			//	dev_id = state_all[state_all.length - 1];
+			//	for ( i = 0; i < 14; i++ )
+			//	my_toggle.trigger("iToggle.toggleID", ["p_" + dev_id + "_" + i, state_all[i]]);
+			//	$("#p_" + dev_id + "_14").val(state_all[14]);
+			//	$("#p_" + dev_id + "_15").val(state_all[15]);
+			//})
+		//}
+	//}, 3000 );
+       
+       
        
        $("#exampleRadioSwitch1").click(function(){
             $("#controls_devices").fadeOut(500);
@@ -125,8 +189,6 @@
             $("#controls_temperature").fadeOut(500);
             $("#controls_security").fadeIn(500);
        });
-       
-       
    })
 
 </script>
