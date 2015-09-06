@@ -23,15 +23,22 @@
         }
         .lightcontrol {position: absolute;height: 25px;width: 25px;border-radius: 50%;}
     </style>
+    
+    <div class="grid_8">
+	<div style="margin-top: 1%;">
+            <a href="/" style="text-decoration: none;">
+		<img src="images/arrow.png" style="width: 46px;float: left;margin-right: 15px;">
+		<span class="header_style" style="font-size: 2.5em;font-family: ARIAL;">Переферия</span>
+            </a>
+	</div>
+    </div>
+    <div class="grid_4">
+	<?php include("partial_login_header_view.php");?>
+    </div>
+    <div class="clear"></div>
+    
 		
-			<div class="grid_10">
-                            <div style="margin-top: 1%;">
-                                    <a href="/" style="text-decoration: none;">
-                                        <img src="images/arrow.png" style="width: 46px;float: left;margin-right: 15px;">
-                                        <span class="header_style" style="font-size: 2.5em;font-family: ARIAL;">Переферия</span>
-                                    </a>
-                            </div>
-                            
+			<div class="grid_10">                            
                             <div class="control_unit cnv">
                             <div id="controls_light" style="display: block;">
                                 <? $state_14_07 = file_get_contents('http://192.168.0.14/sec/?pt=7&cmd=get'); ?>
@@ -41,9 +48,9 @@
                                 <? $state_15_11 = file_get_contents('http://192.168.0.15/sec/?pt=11&cmd=get'); ?>
                                 <a title="Свет в спальне" class="lightcontrol <?php echo $state_15_11; ?>" data-param='http://192.168.0.15/sec/?cmd=11:2' style="position: absolute;left: 199px;top: 253px;" href="#"></a>
                                 <? $state_15_12 = file_get_contents('http://192.168.0.15/sec/?pt=12&cmd=get'); ?>
-                                <a title="Свет в холе" class="lightcontrol <?php echo $state_15_12; ?>" data-param='http://192.168.0.15/sec/?cmd=12:2' style="position: absolute;left: 331px;top: 261px;" href="#"></a>
+                                <a title="Свет в холе" class="lightcontrol <?php echo $state_15_12; ?>" data-param='http://192.168.0.15/sec/?cmd=12:2' style="position: absolute;left: 345px;top: 413px;" href="#"></a>
                                 <? $state_15_13 = file_get_contents('http://192.168.0.15/sec/?pt=13&cmd=get'); ?>
-                                <a title="Свет в прихожей" class="lightcontrol <?php echo $state_15_13; ?>" data-param='http://192.168.0.15/sec/?cmd=13:2' style="position: absolute;left: 345px;top: 413px;" href="#"></a>
+                                <a title="Свет в прихожей" class="lightcontrol <?php echo $state_15_13; ?>" data-param='http://192.168.0.15/sec/?cmd=13:2' style="position: absolute;left: 331px;top: 261px;" href="#"></a>
                                 <? $state_15_07 = file_get_contents('http://192.168.0.15/sec/?pt=7&cmd=get'); ?>
                                 <a title="Свет в ванной" class="lightcontrol <?php echo $state_15_07; ?>" data-param='http://192.168.0.15/sec/?cmd=7:2' style="position: absolute;left: 256px;top: 444px;" href="#"></a>
                                 <? $state_15_08 = file_get_contents('http://192.168.0.15/sec/?pt=8&cmd=get'); ?>
@@ -142,12 +149,10 @@
             //});
        });
        
-       
-       
-       	//setInterval(function(){
-		//var device_list = [2];
-		//for ( j = 0; j < device_list.length; j++ )
-		//{
+       	setInterval(function(){
+		var device_list = [2];
+		for ( j = 0; j < device_list.length; j++ )
+		{
 			//$.get('megad-ajax.php', {id: device_list[j], get_all : 1}, function(data)
 			//{
 			//	state_all = data.split(';');
@@ -157,8 +162,8 @@
 			//	$("#p_" + dev_id + "_14").val(state_all[14]);
 			//	$("#p_" + dev_id + "_15").val(state_all[15]);
 			//})
-		//}
-	//}, 3000 );
+		}
+	}, 3000 );
        
        
        

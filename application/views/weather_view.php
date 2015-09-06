@@ -20,7 +20,7 @@
   );
 ?>
 <div class="container_12" style="min-width: 960px;">
-    <div class="grid_12">
+    <div class="grid_8">
 	<div style="margin-top: 1%;">
             <a href="/" style="text-decoration: none;">
 		<img src="images/arrow.png" style="width: 46px;float: left;margin-right: 15px;">
@@ -28,7 +28,9 @@
             </a>
 	</div>
     </div>
-					
+    <div class="grid_4">
+	<?php include("partial_login_header_view.php");?>
+    </div>				
     <div class="clear"></div>
 	
     

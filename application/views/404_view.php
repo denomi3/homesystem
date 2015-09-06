@@ -1,4 +1,4 @@
-<div class="container_12" style="min-width: 940px;">
+<div class="container_12" style="min-width: 960px;">
 		
 			<div class="grid_12">
 				<div style="margin-top: 1%;">
@@ -10,7 +10,8 @@
 			<div class="clear"></div>
 			
                         <div class="grid_12" style="font-size: 2.5em;font-family: ARIAL;">
-				404 NOT FOUND
+                            <br>
+                            404 NOT FOUND
 			</div>
 			
 			<div class="clear"></div>

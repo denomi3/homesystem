@@ -1,10 +1,13 @@
 <div class="container_12" style="min-width: 960px;">
 		
-			<div class="grid_12">
+			<div class="grid_8">
 				<div style="margin-top: 1%;">
 					<a href="/"><img src="images/dom_white.png" style="width: 65px;margin-right: -5px;"></a>
 					<a href="/" style="text-decoration: none;"><span class="header_style">OME SYSTEM</span></a>
 				</div>
+			</div>
+                        <div class="grid_4">
+				<?php include("partial_login_header_view.php");?>
 			</div>
 					
 			<div class="clear"></div>

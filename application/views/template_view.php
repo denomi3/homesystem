@@ -17,8 +17,11 @@
         </script>
 </head>
 <body>
-    
-<?php include 'application/views/'.$content_view; ?>
+
+<?php 
+require_once("application/models/model_login.php");   
+include 'application/views/'.$content_view; 
+?>
 
 </body>
 </html>
