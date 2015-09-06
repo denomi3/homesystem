@@ -82,7 +82,7 @@
                             
 			</div>
                         <div class="grid_2">
-                            <div class="control_unit_regulators_panel" style="margin-top: 70px;padding-left: 10px;margin-left: -15px;border-left: solid white 2px;">
+                            <div class="control_unit_regulators_panel" style="margin-top: 17px;padding-left: 10px;margin-left: -15px;border-left: solid white 2px;">
                             <div class="dev_switch">
                                 Освещение
                             </div>

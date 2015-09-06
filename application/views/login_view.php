@@ -16,17 +16,17 @@
             <table class="login">
                     <tr>
                             <td>Логин</td>
-                            <td><input type="text" name="login"></td>
+                            <td><input style="font-size: 0.8em;" type="text" name="login"></td>
                     </tr>
                     <tr>
                             <td>Пароль</td>
-                            <td><input type="password" name="password"></td>
+                            <td><input style="font-size: 0.8em;" type="password" name="password"></td>
                     </tr>
                     <td></td>
                     <td style="padding: 0 3px;">
                         
                     <input type="submit" value="Войти" name="btn"
-                    style="width: 100%;">
+                    style="width: 100%;height: 26px;">
                     </td>
             </table>
         </form>
