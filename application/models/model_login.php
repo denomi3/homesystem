@@ -107,8 +107,9 @@ class Model_Login extends Model
     {	
         global $dbconnection;   
         
-        $sql = "SELECT * FROM groups INNER JOIN users_groups using(user_id) "
-                . "WHERE user_id = '".$user_id."' AND group_name='".$group."' LIMIT 1";
+        $sql = "SELECT * FROM `groups` as A1 INNER JOIN `users_groups` as A2 ON A1.group_id=A2.group_id "
+                . "WHERE A2.user_id=".$user_id." AND A1.group_name = '".$group."' LIMIT 1";
+        
         
         if (!$get_result = $dbconnection->query($sql))
         {
