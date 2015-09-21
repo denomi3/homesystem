@@ -2,7 +2,7 @@
     
     
     <div class="grid_8">
-	<div style="margin-top: 1%;">
+	<div style="margin-top: 3%;">
             <a href="/" style="text-decoration: none;">
 		<img src="images/arrow.png" style="width: 46px;float: left;margin-right: 15px;">
 		<span class="header_style" style="font-size: 2.5em;font-family: ARIAL;">События</span>

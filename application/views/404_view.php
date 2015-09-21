@@ -2,8 +2,8 @@
 		
 			<div class="grid_12">
 				<div style="margin-top: 1%;">
-					<a href="/"><img src="images/dom_white.png" style="width: 65px;"></a>
-					<a href="/" style="text-decoration: none;"><span class="header_style">Home System</span></a>
+                                    <a href="/"><img src="images/dom_white.png" style="width: 65px;margin-right: -5px;"></a>
+                                    <a href="/" style="text-decoration: none;"><span class="header_style">OME SYSTEM</span></a>
 				</div>
 			</div>
 					

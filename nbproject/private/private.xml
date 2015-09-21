@@ -3,24 +3,35 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_weather.php</file>
-            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_events.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/models/model_events.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/models/model_login.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_main.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_contacts.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_login.php</file>
-            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/light_view.php</file>
-            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/events_view.php</file>
-            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/404_view.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/models/model_weather.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/template_view.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/core/route.php</file>
-            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_services.php</file>
-            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/main_view.php</file>
-            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_light.php</file>
-            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_admin.php</file>
-            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/dbconfig.php</file>
-            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/contacts_view.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/core/view.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/login_view.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/admin_view.php</file>
-            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/core/controller.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/weather_view.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/dbconnect.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/core/controller.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_404.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_weather.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_events.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/light_view.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/events_view.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/bootstrap.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/404_view.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/main_view.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_services.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_light.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_admin.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/contacts_view.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/core/model.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/services_view.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/partial_login_header_view.php</file>
         </group>
     </open-files>
 </project-private>

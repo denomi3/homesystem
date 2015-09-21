@@ -25,7 +25,7 @@
     </style>
     
     <div class="grid_8">
-	<div style="margin-top: 1%;">
+	<div style="margin-top: 3%;">
             <a href="/" style="text-decoration: none;">
 		<img src="images/arrow.png" style="width: 46px;float: left;margin-right: 15px;">
 		<span class="header_style" style="font-size: 2.5em;font-family: ARIAL;">Переферия</span>
@@ -41,26 +41,31 @@
 			<div class="grid_10">                            
                             <div class="control_unit cnv">
                             <div id="controls_light" style="display: block;">
-                                <? $state_14_07 = file_get_contents('http://192.168.0.14/sec/?pt=7&cmd=get'); ?>
-                                <a title="Свет в детской" class="lightcontrol <?php echo $state_14_07; ?>" data-param="" style="position: absolute;left: 222px;top: 90px;" href='#'></a>
-                                <? $state_15_10 = file_get_contents('http://192.168.0.15/sec/?pt=10&cmd=get'); ?>
-                                <a title="Свет в гостинной" class="lightcontrol <?php echo $state_15_10; ?>" data-param="http://192.168.0.15/sec/?cmd=10:2" style="position: absolute;left: 467px;top: 90px;" href="#"></a>
-                                <? $state_15_11 = file_get_contents('http://192.168.0.15/sec/?pt=11&cmd=get'); ?>
-                                <a title="Свет в спальне" class="lightcontrol <?php echo $state_15_11; ?>" data-param='http://192.168.0.15/sec/?cmd=11:2' style="position: absolute;left: 199px;top: 253px;" href="#"></a>
-                                <? $state_15_12 = file_get_contents('http://192.168.0.15/sec/?pt=12&cmd=get'); ?>
-                                <a title="Свет в холе" class="lightcontrol <?php echo $state_15_12; ?>" data-param='http://192.168.0.15/sec/?cmd=12:2' style="position: absolute;left: 345px;top: 413px;" href="#"></a>
-                                <? $state_15_13 = file_get_contents('http://192.168.0.15/sec/?pt=13&cmd=get'); ?>
-                                <a title="Свет в прихожей" class="lightcontrol <?php echo $state_15_13; ?>" data-param='http://192.168.0.15/sec/?cmd=13:2' style="position: absolute;left: 331px;top: 261px;" href="#"></a>
-                                <? $state_15_07 = file_get_contents('http://192.168.0.15/sec/?pt=7&cmd=get'); ?>
-                                <a title="Свет в ванной" class="lightcontrol <?php echo $state_15_07; ?>" data-param='http://192.168.0.15/sec/?cmd=7:2' style="position: absolute;left: 256px;top: 444px;" href="#"></a>
-                                <? $state_15_08 = file_get_contents('http://192.168.0.15/sec/?pt=8&cmd=get'); ?>
-                                <a title="Свет в туалете" class="lightcontrol <?php echo $state_15_08; ?>" data-param='http://192.168.0.15/sec/?cmd=8:2' style="position: absolute;left: 196px;top: 444px;" href="#"></a>
-                                <? $state_15_09 = file_get_contents('http://192.168.0.15/sec/?pt=9&cmd=get'); ?>
-                                <a title="Свет на кухне" class="lightcontrol <?php echo $state_15_09; ?>" data-param='http://192.168.0.15/sec/?cmd=9:2' style="position: absolute;left: 98px;top: 413px;" href="#"></a>
+                                <?
+                                    
+				foreach($data as $row_)
+                                {
+                                        //if ($row_['0'] == '')
+                                        //{
+                                            $dmega = explode(".", $row_['key_addr']);
+                                            $dmega_addr = 'http://192.168.'.$dmega[1].'.'.$dmega[2].'/sec/';
+                                            $dmega_addr = preg_replace("/\,$/", "", $dmega_addr);
+                                            $dmega_key = $dmega[3];                                                
+                                            $dmega_title = $row_['key_title'];
+                                            list($dmega_l, $dmega_t) = explode(";", $row_['key_place']);
+                                            
+                                            $state = file_get_contents($dmega_addr.'?pt='.$dmega_key.'&cmd=get');
+                                            echo '<a title="'.$dmega_title.'" class="lightcontrol '.$state.'" data-param="'.$dmega_addr.'?cmd='.$dmega_key.':2" style="position: absolute;left: '.$dmega_l.'px;top: '.$dmega_t.'px;" href="#"></a>';
+                                        //}
+                                }
+                                
+                                ?>
+                                
+                              
                             </div>
 
                             <div id="controls_temperature" style="display: none;">
-                                <a title="Температур в квартире" class="tempcontrol" data-param='' style="position:absolute;left: 329px;top: 261px;" href="#"></a>
+                                <a title="Температура в квартире" class="tempcontrol" data-param='' style="position:absolute;left: 329px;top: 261px;" href="#"></a>
                             </div>
 
                             <div id="controls_devices" style="display: none;">
