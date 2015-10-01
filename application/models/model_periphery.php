@@ -20,6 +20,15 @@ class Model_Periphery extends Model
                     $common_result->data_seek(0);
                     while ($row = $common_result->fetch_assoc()) 
                     {
+                        $row['temp_value'] = 0;
+                        if($row['key_type']== 'temp')
+                        {
+                            $temp = "SELECT MAX(temp_date), temp_value FROM temp_data WHERE id_dev ='".$row['key_addr']."'";
+                            $temp_result = $dbconnection->query($temp);
+                            $temp_result->data_seek(0);
+                            $temp_row = $temp_result->fetch_assoc();
+                            $row['temp_value'] = $temp_row['temp_value'];
+                        }
                         $common_data[] = $row;
                     }
                 }                
