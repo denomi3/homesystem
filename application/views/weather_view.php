@@ -86,7 +86,7 @@
                     echo '<br />';
                     echo '<div class="weather_header2">';
                     echo $value['day'].' '.$monthAr[(int)$value['month']][1].', '.$value['day_of_week'].'</div>';
-                    echo '<br /><br />';
+                    echo '<br />';
 
                     foreach ($value['weather'] as $key1 => $value1)
                     { 

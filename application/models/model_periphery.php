@@ -8,8 +8,7 @@ class Model_Periphery extends Model
                 global $dbconnection;            
                 
                 $common_sql = "SELECT `keyID` , `key_addr` , `key_title` , `key_label` , `key_pio` , `key_level` , `key_type` , `key_place`
-                               FROM `dev_keys`
-                               WHERE `key_type` = 'key'";
+                               FROM `dev_keys`";
                 
                 if (!$common_result = $dbconnection->query($common_sql))
                 {

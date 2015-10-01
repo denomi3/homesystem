@@ -21,7 +21,25 @@
             -o-background-size: 100%; /* Opera 9.6+ */
             background-size: 100%; /* Современные браузеры */
         }
-        .lightcontrol {position: absolute;height: 25px;width: 25px;border-radius: 50%;}
+        .tempcontrol {position: relative;background:url(/images/temperature.png) no-repeat;
+            -moz-background-size: 100%; /* Firefox 3.6+ */
+            -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+            -o-background-size: 100%; /* Opera 9.6+ */
+            background-size: 100%; /* Современные браузеры */
+        }
+        .lightcontrol,.tempcontrol,.devcontrol,.securcontrol {
+            position: absolute;
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+        }
+        .temp_pos{
+            margin-left: 29px;
+            font-size: 20px;
+            font-family: arial;
+        }
     </style>
     
     <div class="grid_8">
@@ -41,12 +59,11 @@
 			<div class="grid_10">                            
                             <div class="control_unit cnv">
                             <div id="controls_light" style="display: block;">
-                                <?
-                                    
+                                <? 
 				foreach($data as $row_)
                                 {
-                                        //if ($row_['0'] == '')
-                                        //{
+                                        if ($row_['key_type'] == 'key')
+                                        {
                                             $dmega = explode(".", $row_['key_addr']);
                                             $dmega_addr = 'http://192.168.'.$dmega[1].'.'.$dmega[2].'/sec/';
                                             $dmega_addr = preg_replace("/\,$/", "", $dmega_addr);
@@ -55,20 +72,31 @@
                                             list($dmega_l, $dmega_t) = explode(";", $row_['key_place']);
                                             
                                             $state = file_get_contents($dmega_addr.'?pt='.$dmega_key.'&cmd=get');
-                                            echo '<a title="'.$dmega_title.'" class="lightcontrol '.$state.'" data-param="'.$dmega_addr.'?cmd='.$dmega_key.':2" style="position: absolute;left: '.$dmega_l.'px;top: '.$dmega_t.'px;" href="#"></a>';
-                                        //}
+                                            echo '<a id="light_'.$row_['key_addr'].'" title="'.$dmega_title.'" class="lightcontrol '.$state.'" data-param="'.$dmega_addr.'?cmd='.$dmega_key.':2" style="position: absolute;left: '.$dmega_l.'px;top: '.$dmega_t.'px;" href="#"></a>';
+                                        }
                                 }
-                                
                                 ?>
-                                
-                              
                             </div>
 
                             <div id="controls_temperature" style="display: none;">
-                                <a title="Температура в квартире" class="tempcontrol" data-param='' style="position:absolute;left: 329px;top: 261px;" href="#"></a>
+                                <? 
+				foreach($data as $row_)
+                                {
+                                        if ($row_['key_type'] == 'temp')
+                                        {
+                                            $term = explode(".", $row_['key_addr']);
+                                            $dmega_key = $dmega[3];                                                
+                                            $dmega_title = $row_['key_title'];
+                                            list($dmega_l, $dmega_t) = explode(";", $row_['key_place']);
+                                            echo '<a id="temp_'.$row_['key_addr'].'" title="'.$dmega_title.'" class="tempcontrol" data-param="" style="position: absolute;left: '.$dmega_l.'px;top: '.$dmega_t.'px;" href="#"><span class="temp_pos">10&deg;</span></a>';
+                                        }
+                                }
+                                ?>
+                                <!--<a title="Свет в детсткой" class="tempcontrol" data-param="" style="position: absolute;left: 222px;top: 90px;" href="#"></a>
+                                <a title="Температура в квартире" class="tempcontrol" data-param='' style="position:absolute;left: 329px;top: 261px;" href="#"></a>-->
                             </div>
 
-                            <div id="controls_devices" style="display: none;">
+                            <!--<div id="controls_devices" style="display: none;">
                                 <a title="Вода, кран" class="devcontrol" data-param='' style="position: absolute;left: 149px;top: 490px;" href="#"></a>
                                 <a title="Жалюзи на кухне" class="devcontrol" data-param='' style="position: absolute;left: 29px;top: 428px;" href="#"></a>
                                 <a title="Жалюзи в детской" class="devcontrol" data-param='' style="position: absolute;left: 130px;top: 79px;" href="#"></a>
@@ -81,7 +109,7 @@
                                 <a title="Сигнализация на кухне" class="lightcontrol" data-param='' style="position: absolute;left: 29px;top: 428px;" href="#"></a>
                                 <a title="Сигнализация в детской" class="lightcontrol" data-param='' style="position: absolute;left: 130px;top: 79px;" href="#"></a>
                                 <a title="Сигнализация зале" class="lightcontrol" data-param='' style="position: absolute;left: 580px;top: 79px;" href="#"></a>
-                            </div>
+                            </div>-->
                             
                         </div>
                             
@@ -145,33 +173,27 @@
             
             var link = lamp.data('param');
             $.get(link);
-
-            //$.get("key.php?key_label=" +label + "&key_pio=" + action, function(data){ 
-		//$.get("ab-data.php?p=keys", function(data)
-		//{
-                    //$("#keys").html(data);
-		//});
-            //});
        });
        
-       	setInterval(function(){
-		var device_list = [2];
-		for ( j = 0; j < device_list.length; j++ )
-		{
-			//$.get('megad-ajax.php', {id: device_list[j], get_all : 1}, function(data)
-			//{
-			//	state_all = data.split(';');
-			//	dev_id = state_all[state_all.length - 1];
-			//	for ( i = 0; i < 14; i++ )
-			//	my_toggle.trigger("iToggle.toggleID", ["p_" + dev_id + "_" + i, state_all[i]]);
-			//	$("#p_" + dev_id + "_14").val(state_all[14]);
-			//	$("#p_" + dev_id + "_15").val(state_all[15]);
-			//})
-		}
-	}, 3000 );
-       
-       
-       
+       	//setInterval(function()
+        //{
+            /*<?                                    
+                    foreach($data as $row_)
+                    {
+                            if ($row_['key_type'] == 'key')
+                            {
+                                    $dmega = explode(".", $row_['key_addr']);
+                                    $dmega_addr = 'http://192.168.'.$dmega[1].'.'.$dmega[2].'/sec/';
+                                    $dmega_addr = preg_replace("/\,$/", "", $dmega_addr);
+                                    $dmega_key = $dmega[3];                                                                                            
+                                    $url_state = $dmega_addr.'?pt='.$dmega_key.'&cmd=get';
+                                    $id_control = "light_".$row_['key_addr'];
+                                    echo '$.get("'.$url_state.'", function(data){$("#'.$id_control.'").removeClass("OFF").removeClass("ON").addClass(data);});'; 
+                            }
+                    }
+            ?>   */   
+	//}, 3000 );
+        
        $("#exampleRadioSwitch1").click(function(){
             $("#controls_devices").fadeOut(500);
             $("#controls_security").fadeOut(500);
@@ -193,7 +215,7 @@
             $("#controls_devices").fadeIn(500);
        });
        
-        $("#exampleRadioSwitch4").click(function(){
+       $("#exampleRadioSwitch4").click(function(){
             $("#controls_light").fadeOut(500);
             $("#controls_devices").fadeOut(500);
             $("#controls_temperature").fadeOut(500);
