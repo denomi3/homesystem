@@ -90,7 +90,7 @@
                                             list($dmega_l, $dmega_t) = explode(";", $row_['key_place']);
                                             echo '<a id="temp_'.$row_['key_addr'].'" title="'.$dmega_title.'" class="tempcontrol" data-param="" style="position: absolute;left: '.$dmega_l.'px;top: '.$dmega_t.'px;" href="#">'
                                                     . '<span class="temp_pos">'
-                                                         .$row_['temp_value'].'&deg;'
+                                                         .round($row_['temp_value']).'&deg;'
                                                     . '</span>'
                                                . '</a>';
                                         }
