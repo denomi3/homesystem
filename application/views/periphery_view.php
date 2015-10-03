@@ -64,15 +64,13 @@
                                 {
                                         if ($row_['key_type'] == 'key')
                                         {
-                                            $dmega = explode(".", $row_['key_addr']);
-                                            $dmega_addr = 'http://192.168.'.$dmega[1].'.'.$dmega[2].'/sec/';
-                                            $dmega_addr = preg_replace("/\,$/", "", $dmega_addr);
-                                            $dmega_key = $dmega[3];                                                
-                                            $dmega_title = $row_['key_title'];
+                                            list($dmega_id, $dmega_port) = explode(":", $row_['key_addr']);
                                             list($dmega_l, $dmega_t) = explode(";", $row_['key_place']);
-                                            
-                                            $state = file_get_contents($dmega_addr.'?pt='.$dmega_key.'&cmd=get');
-                                            echo '<a id="light_'.$row_['key_addr'].'" title="'.$dmega_title.'" class="lightcontrol '.$state.'" data-param="'.$dmega_addr.'?cmd='.$dmega_key.':2" style="position: absolute;left: '.$dmega_l.'px;top: '.$dmega_t.'px;" href="#"></a>';
+                                            $dmega_addr = 'http://'.$dmega_id.'/sec/';
+                                            $dmega_addr = preg_replace("/\,$/", "", $dmega_addr);                                              
+                                            $dmega_title = $row_['key_title'];
+                                            $state = file_get_contents($dmega_addr.'?pt='.$dmega_port.'&cmd=get');
+                                            echo '<a id="'.$row_['key_addr'].'" title="'.$dmega_title.'" class="lightcontrol '.$state.'" data-param="'.$dmega_addr.'?cmd='.$dmega_port.':2" style="position: absolute;left: '.$dmega_l.'px;top: '.$dmega_t.'px;" href="#"></a>';
                                         }
                                 }
                                 ?>
@@ -83,9 +81,7 @@
 				foreach($data as $row_)
                                 {
                                         if ($row_['key_type'] == 'temp')
-                                        {
-                                            $term = explode(".", $row_['key_addr']);
-                                            $dmega_key = $dmega[3];                                                
+                                        {                                             
                                             $dmega_title = $row_['key_title'];
                                             list($dmega_l, $dmega_t) = explode(";", $row_['key_place']);
                                             echo '<a id="temp_'.$row_['key_addr'].'" title="'.$dmega_title.'" class="tempcontrol" data-param="" style="position: absolute;left: '.$dmega_l.'px;top: '.$dmega_t.'px;" href="#">'
@@ -96,8 +92,6 @@
                                         }
                                 }
                                 ?>
-                                <!--<a title="Свет в детсткой" class="tempcontrol" data-param="" style="position: absolute;left: 222px;top: 90px;" href="#"></a>
-                                <a title="Температура в квартире" class="tempcontrol" data-param='' style="position:absolute;left: 329px;top: 261px;" href="#"></a>-->
                             </div>
 
                             <!--<div id="controls_devices" style="display: none;">
@@ -159,6 +153,18 @@
 <script>
    
    $(document).ready(function(){
+        function LightTimer() {
+            $(".lightcontrol").each(function() {
+                var _this = $(this);
+                var arr = _this.attr('id').split(':');
+                    $.get('get_megad_script.php', {id: arr[0], get_state : arr[1]}, function(data)
+                    {
+                        //_this.removeClass("OFF").removeClass("ON").addClass(data); 
+                    });
+              });
+        }
+        setInterval(function(){ LightTimer() }, 3000);
+      
        
        $(".lightcontrol").click(function(){
             var lamp = $(this);
@@ -178,25 +184,7 @@
             var link = lamp.data('param');
             $.get(link);
        });
-       
-       	//setInterval(function()
-        //{
-            /*<?                                    
-                    foreach($data as $row_)
-                    {
-                            if ($row_['key_type'] == 'key')
-                            {
-                                    $dmega = explode(".", $row_['key_addr']);
-                                    $dmega_addr = 'http://192.168.'.$dmega[1].'.'.$dmega[2].'/sec/';
-                                    $dmega_addr = preg_replace("/\,$/", "", $dmega_addr);
-                                    $dmega_key = $dmega[3];                                                                                            
-                                    $url_state = $dmega_addr.'?pt='.$dmega_key.'&cmd=get';
-                                    $id_control = "light_".$row_['key_addr'];
-                                    echo '$.get("'.$url_state.'", function(data){$("#'.$id_control.'").removeClass("OFF").removeClass("ON").addClass(data);});'; 
-                            }
-                    }
-            ?>   */   
-	//}, 3000 );
+      
         
        $("#exampleRadioSwitch1").click(function(){
             $("#controls_devices").fadeOut(500);

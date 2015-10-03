@@ -4,6 +4,7 @@
 				<div style="margin-top: 1%;">
 					<a href="/"><img src="images/dom_white.png" style="width: 65px;margin-right: -5px;"></a>
 					<a href="/" style="text-decoration: none;"><span class="header_style">OME SYSTEM</span></a>
+                                        <span id="demo" class="header_style" style="font-size: 2.5em;font-family: ARIAL;margin-left: 50px;"></span>
 				</div>
 			</div>
                         <div class="grid_4">
@@ -165,3 +166,20 @@
                         
                        
         </div>
+<script>
+   
+            $(document).ready(function(){
+                
+                function myTimer() {
+                    var timeNow = function () {
+                            var d = new Date()
+                            return ((d.getHours() < 10)?"0":"") + d.getHours() +":"+ ((d.getMinutes() < 10)?"0":"") + d.getMinutes() +":"+ ((d.getSeconds() < 10)?"0":"") + d.getSeconds();
+                    }
+                    document.getElementById("demo").innerHTML = timeNow();
+                }
+                myTimer();
+                var myVar = setInterval(function(){ myTimer() }, 1000);
+
+                
+            });
+</script>

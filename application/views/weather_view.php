@@ -93,7 +93,6 @@
                         //$value1 = $value['weather'][1]
                         if($value1['time_of_day'] == 'день' || $value1['time_of_day'] == 'ночь')
                         {
-                            //echo '<img src="http://yandex.st/weather/1.1.78/i/icons/48x48/'.$value1['image'].'.png"width="78" height="78" style="float:left;" />';
                             echo '<img src="images/weather/'.$value1['image'].'.png"width="78" height="78" style="float:left;" />';
                             echo '<p class="weather_text2">'.$value1['time_of_day'].'</p>';
                             echo '<p class="weather_text2">'.$value1['temp_from'].'...'.$value1['temp_to'].'</p>';

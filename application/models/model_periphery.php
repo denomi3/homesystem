@@ -23,7 +23,7 @@ class Model_Periphery extends Model
                         $row['temp_value'] = 0;
                         if($row['key_type']== 'temp')
                         {
-                            $temp = "SELECT MAX(temp_date), temp_value FROM temp_data WHERE id_dev ='".$row['key_addr']."'";
+                            $temp = "SELECT temp_date, temp_value FROM temp_data WHERE id_dev ='".$row['key_addr']."' ORDER BY temp_date DESC LIMIT 1";
                             $temp_result = $dbconnection->query($temp);
                             $temp_result->data_seek(0);
                             $temp_row = $temp_result->fetch_assoc();
