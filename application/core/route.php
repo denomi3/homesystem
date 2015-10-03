@@ -27,6 +27,12 @@ class Route
 		{
 			$action_name = $routes[2];
 		}
+                
+                // получаем параметры экшена
+		//if ( !empty($routes[3]) )
+		//{
+		//	$action_name = $routes[2];
+		//}
 
 		// добавляем префиксы
 		$model_name = 'Model_'.$controller_name;

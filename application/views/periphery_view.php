@@ -157,13 +157,13 @@
             $(".lightcontrol").each(function() {
                 var _this = $(this);
                 var arr = _this.attr('id').split(':');
-                    $.get('get_megad_script.php', {id: arr[0], get_state : arr[1]}, function(data)
+                    $.get('megad/getstate/', {id: arr[0], port : arr[1]}, function(data)
                     {
-                        //_this.removeClass("OFF").removeClass("ON").addClass(data); 
+                        _this.removeClass("OFF").removeClass("ON").addClass(data); 
                     });
               });
         }
-        setInterval(function(){ LightTimer() }, 3000);
+        setInterval(function(){ LightTimer() }, 2000);
       
        
        $(".lightcontrol").click(function(){

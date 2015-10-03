@@ -13,8 +13,15 @@ class megad
 	
 	public function get($id, $port)
 	{
-		$state = file_get_contents("http://".$id."/sec/?pt=$port&cmd=get");
+            try                 
+            {
+                $state = file_get_contents("http://".$id."/sec/?pt=$port&cmd=get");
 		return $state;
+            } 
+            catch (Exception $ex)
+            {
+                return 'OFF';
+            }
+		
 	}
 }
-?>
