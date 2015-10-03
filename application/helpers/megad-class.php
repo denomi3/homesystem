@@ -8,7 +8,13 @@ class megad
 	
 	public function control($id, $port, $state)
 	{
+            try                 
+            {
 		file_get_contents("http://".$id."/sec/?cmd=$port:$state");
+            } 
+            catch (Exception $ex)   
+            {
+            }
 	}
 	
 	public function get($id, $port)

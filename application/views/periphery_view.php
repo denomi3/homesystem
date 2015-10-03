@@ -70,7 +70,7 @@
                                             $dmega_addr = preg_replace("/\,$/", "", $dmega_addr);                                              
                                             $dmega_title = $row_['key_title'];
                                             $state = file_get_contents($dmega_addr.'?pt='.$dmega_port.'&cmd=get');
-                                            echo '<a id="'.$row_['key_addr'].'" title="'.$dmega_title.'" class="lightcontrol '.$state.'" data-param="'.$dmega_addr.'?cmd='.$dmega_port.':2" style="position: absolute;left: '.$dmega_l.'px;top: '.$dmega_t.'px;" href="#"></a>';
+                                            echo '<a id="'.$row_['key_addr'].'" title="'.$dmega_title.'" class="lightcontrol '.$state.'" style="position: absolute;left: '.$dmega_l.'px;top: '.$dmega_t.'px;" href="#"></a>';
                                         }
                                 }
                                 ?>
@@ -84,7 +84,7 @@
                                         {                                             
                                             $dmega_title = $row_['key_title'];
                                             list($dmega_l, $dmega_t) = explode(";", $row_['key_place']);
-                                            echo '<a id="temp_'.$row_['key_addr'].'" title="'.$dmega_title.'" class="tempcontrol" data-param="" style="position: absolute;left: '.$dmega_l.'px;top: '.$dmega_t.'px;" href="#">'
+                                            echo '<a id="temp_'.$row_['key_addr'].'" title="'.$dmega_title.'" class="tempcontrol" style="position: absolute;left: '.$dmega_l.'px;top: '.$dmega_t.'px;" href="#">'
                                                     . '<span class="temp_pos">'
                                                          .round($row_['temp_value']).'&deg;'
                                                     . '</span>'
@@ -168,7 +168,7 @@
        
        $(".lightcontrol").click(function(){
             var lamp = $(this);
-            //var label = lamp.attr("label");
+            var arr = lamp.attr('id').split(':');
             var action = 0;
             if ( lamp.hasClass("OFF") )
             {
@@ -182,7 +182,7 @@
             }
             
             var link = lamp.data('param');
-            $.get(link);
+            $.get('megad/control/', {id: arr[0], port : arr[1], state : 2});
        });
       
         
