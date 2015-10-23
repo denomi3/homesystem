@@ -10,7 +10,7 @@
 	</div>
     </div>
     <div class="grid_4">
-	<?php include("partial_login_header_view.php");?>
+	<?php include("partial/partial_login_header_view.php");?>
     </div>
     <div class="clear"></div>
 			

@@ -8,7 +8,7 @@
 				</div>
 			</div>
                         <div class="grid_4">
-				<?php include("partial_login_header_view.php");?>
+				<?php include("partial/partial_login_header_view.php");?>
 			</div>
 					
 			<div class="clear"></div>
@@ -28,7 +28,7 @@
                             </a>
 			</div>
                         <div class="grid_4">
-                            <a href="/periphery" style="text-decoration: none;">
+                            <a href="/peripherylight" style="text-decoration: none;">
 				<div class="parent control_unit_container_control ui-state-highlight main_div_unit">
                                     <div class="child">
 						<img class="img_style" src="images/control_white.png">
