@@ -1,6 +1,6 @@
 <?php
 
-class Model_Periphery extends Model
+class Model_Peripherytemp extends Model
 {
 	
 	public function get_data()
@@ -12,7 +12,7 @@ class Model_Periphery extends Model
                 
                 if (!$common_result = $dbconnection->query($common_sql))
                 {
-                    echo "Ошибка Model_Periphery->get_data";
+                    echo "Ошибка Model_Peripherytemp->get_data";
                 } 
                 else 
                 {

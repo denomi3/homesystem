@@ -33,7 +33,7 @@ class Controller_Megad extends Controller
                 $id = $_GET['id'];
                 $port = $_GET['port'];
                 $state = $_GET['state'];
-                $state = $megad->control($id, $port, $state);
+                $megad->control($id, $port, $state);
             }
 	}
 }
