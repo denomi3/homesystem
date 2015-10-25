@@ -12,31 +12,38 @@
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_contacts.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_megad.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/peripherylight_view.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/partial/partial_periphery.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/models/model_weather.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/template_view.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_cameras.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/models/model_peripherylight.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/core/route.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/core/view.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/models/model_peripherylight1.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/load.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/cron_scripts/temperature_script.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/login_view.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_peripherylight.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/admin_view.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/weather_view.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_periphery.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/dbconnect.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_404.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/periphery_view.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/peripherylight1_view.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/helpers/megad-class.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_scenarios.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_weather.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_events.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_peripherylight1.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/events_view.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_services.php</file>
-            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/main_view.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/controllers/controller_admin.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/index.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/views/scenarios_view.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/dbconfig.php</file>
             <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/core/model.php</file>
+            <file>file:/home/zakharov/NetBeansProjects/HomeSystem/homesystem/application/models/model_peripherytemp.php</file>
         </group>
     </open-files>
 </project-private>

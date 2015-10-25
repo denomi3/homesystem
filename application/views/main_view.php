@@ -28,7 +28,7 @@
                             </a>
 			</div>
                         <div class="grid_4">
-                            <a href="/peripherylight" style="text-decoration: none;">
+                            <a href="/periphery" style="text-decoration: none;">
 				<div class="parent control_unit_container_control ui-state-highlight main_div_unit">
                                     <div class="child">
 						<img class="img_style" src="images/control_white.png">
@@ -133,7 +133,7 @@
 			</div>
                         
                          <div class="grid_4">
-                            <a href="/locations" style="text-decoration: none;">
+                            <a href="#" style="text-decoration: none;">
 				<div class="parent control_unit_container_locations ui-state-highlight main_div_unit">
 					<div class="child">
 						<img class="img_style" src="images/locations_white.png">

@@ -12,6 +12,6 @@ class Controller_Peripherytemp extends Controller
 	function action_index()
 	{	
             $data = $this->model->get_data();	
-            $this->view->generate('peripherytemp_view.php', 'template_view.php', $data);
+            $this->view->generate('peripherytemp_view.php', 'template_empty.php', $data);
 	}
 }
