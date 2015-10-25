@@ -104,7 +104,7 @@
 			<div class="clear"></div>
 			
 			<div class="grid_4">
-                            <a href="/media" style="text-decoration: none;">
+                            <a href="http://vk.com/audios2740764" style="text-decoration: none;">
 				<div class="parent control_unit_container_media ui-state-highlight main_div_unit">
 					<div class="child">
 						<img class="img_style" src="images/media_white.png">
