@@ -26,8 +26,15 @@ class Model_Peripherytemp extends Model
                             $temp_result = $dbconnection->query($temp);
                             $temp_result->data_seek(0);
                             $temp_row = $temp_result->fetch_assoc();
-                            $row['temp_value'] = $temp_row['temp_value'];
-
+                            $row['temp_value'] = $temp_row['temp_value']; 
+                            
+                            $current_date = time();
+                            $lastdate = strtotime($temp_row['temp_date']);
+                            $raz = $current_date - $lastdate;
+                            if($raz>600)
+                            {
+                                $row['temp_value'] = '';
+                            }
                             $common_data[] = $row;
                     }
                 }                

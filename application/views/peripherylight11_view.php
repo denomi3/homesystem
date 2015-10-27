@@ -1,5 +1,4 @@
 <div class="container_12" style="min-width: 960px;">
-    
     <style>
         .cnv{height: 527px;width: 717px; position: relative;background:url(/images/home_cheme_plan.png)  no-repeat;
             -moz-background-size: 100%; /* Firefox 3.6+ */
@@ -32,7 +31,6 @@
             text-decoration: none;
         }
     </style>
-    
     <div class="grid_8">
 	<div style="margin-top: 3%;">
             <a href="/" style="text-decoration: none;">
@@ -45,8 +43,6 @@
 	<?php include("partial/partial_login_header_view.php");?>
     </div>
     <div class="clear"></div>
-    
-		
 			<div class="grid_9">                            
                             <div class="control_unit cnv">
                             <div id="controls_light" style="display: block;">
@@ -107,12 +103,10 @@
                         </div> 
                             -->
                             
-			</div>
-					
-			<div class="clear"></div>
+			</div>	
+    <div class="clear"></div>
 			
 </div>
-
 <script>
    
    $(document).ready(function(){
