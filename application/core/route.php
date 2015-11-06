@@ -13,78 +13,149 @@ class Route
 		// контроллер и действие по умолчанию
 		$controller_name = 'Main';
 		$action_name = 'index';
+                $admin_backend = 'admin';
 		
 		$routes = explode('/', $_SERVER['REQUEST_URI']);
 
-		// получаем имя контроллера
-		if ( !empty($routes[1]) )
-		{	
-			$controller_name = $routes[1];
-		}
-		
-		// получаем имя экшена
-		if ( !empty($routes[2]) )
-		{
-			$action_name = $routes[2];
-		}
-                
-                // получаем параметры экшена
-		//if ( !empty($routes[3]) )
-		//{
-		//	$action_name = $routes[2];
-		//}
+                //если контроллер лежит в зоне админки
+                if(!empty($routes[1]) && $routes[1]== $admin_backend)
+                {
+                    // получаем имя контроллера
+                    if ( !empty($routes[2]) )
+                    {	
+                            $controller_name = $routes[2];
+                    }
 
-		// добавляем префиксы
-		$model_name = 'Model_'.$controller_name;
-		$controller_name = 'Controller_'.$controller_name;
-		$action_name = 'action_'.$action_name;
+                    // получаем имя экшена
+                    if ( !empty($routes[3]) )
+                    {
+                            $action_name = $routes[3];
+                    }
 
-		/*
-		echo "Model: $model_name <br>";
-		echo "Controller: $controller_name <br>";
-		echo "Action: $action_name <br>";
-		*/
+                    // добавляем префиксы
+                    $model_name = 'Model_'.$controller_name;
+                    $controller_name = 'Controller_'.$controller_name;
+                    $action_name = 'action_'.$action_name;
 
-		// подцепляем файл с классом модели (файла модели может и не быть)
+                    /*
+                    echo "Model: $model_name <br>";
+                    echo "Controller: $controller_name <br>";
+                    echo "Action: $action_name <br>";
+                    */
 
-		$model_file = strtolower($model_name).'.php';
+                    // подцепляем файл с классом модели (файла модели может и не быть)
 
-		$model_path = "application/models/".$model_file;
-		if(file_exists($model_path))
-		{
-                    include "application/models/".$model_file;
-		}
+                    $model_file = strtolower($model_name).'.php';
 
-		// подцепляем файл с классом контроллера
-		$controller_file = strtolower($controller_name).'.php';
-		$controller_path = "application/controllers/".$controller_file;
-		if(file_exists($controller_path))
-		{
-			include "application/controllers/".$controller_file;
-		}
-		else
-		{
-			/*
-			правильно было бы кинуть здесь исключение,
-			но для упрощения сразу сделаем редирект на страницу 404
-			*/
-			Route::ErrorPage404();
-		}
-		
-		// создаем контроллер
-		$controller = new $controller_name;
-		$action = $action_name;
-		
-		if(method_exists($controller, $action))
-		{
-			// вызываем действие контроллера
-			$controller->$action();
-		}
-		else
-		{
-			// здесь также разумнее было бы кинуть исключение
-			Route::ErrorPage404();
-		}
+                    $model_path = "application/admin/models/".$model_file;
+                    if(file_exists($model_path))
+                    {
+                        include "application/admin/models/".$model_file;
+                    }
+
+                    // подцепляем файл с классом контроллера
+                    $controller_file = strtolower($controller_name).'.php';
+                    $controller_path = "application/admin/controllers/".$controller_file;
+                    if(file_exists($controller_path))
+                    {
+                            include "application/admin/controllers/".$controller_file;
+                    }
+                    else
+                    {
+                            /*
+                            правильно было бы кинуть здесь исключение,
+                            но для упрощения сразу сделаем редирект на страницу 404
+                            */
+                            Route::ErrorPage404();
+                    }
+
+                    // создаем контроллер
+                    $controller = new $controller_name;
+                    $action = $action_name;
+
+                    if(method_exists($controller, $action))
+                    {
+                            // вызываем действие контроллера
+                            $controller->$action();
+                    }
+                    else
+                    {
+                            // здесь также разумнее было бы кинуть исключение
+                            Route::ErrorPage404();
+                    }
+                }
+                else
+                {
+                    // получаем имя контроллера
+                    if ( !empty($routes[1]) )
+                    {	
+                            $controller_name = $routes[1];
+                    }
+
+                    // получаем имя экшена
+                    if ( !empty($routes[2]) )
+                    {
+                            $action_name = $routes[2];
+                    }
+
+                    // получаем параметры экшена
+                    //if ( !empty($routes[3]) )
+                    //{
+                    //	$action_name = $routes[2];
+                    //}
+
+                    // добавляем префиксы
+                    $model_name = 'Model_'.$controller_name;
+                    $controller_name = 'Controller_'.$controller_name;
+                    $action_name = 'action_'.$action_name;
+
+                    /*
+                    echo "Model: $model_name <br>";
+                    echo "Controller: $controller_name <br>";
+                    echo "Action: $action_name <br>";
+                    */
+
+                    // подцепляем файл с классом модели (файла модели может и не быть)
+
+                    $model_file = strtolower($model_name).'.php';
+
+                    $model_path = "application/models/".$model_file;
+                    if(file_exists($model_path))
+                    {
+                        include "application/models/".$model_file;
+                    }
+
+                    // подцепляем файл с классом контроллера
+                    $controller_file = strtolower($controller_name).'.php';
+                    $controller_path = "application/controllers/".$controller_file;
+                    if(file_exists($controller_path))
+                    {
+                            include "application/controllers/".$controller_file;
+                    }
+                    else
+                    {
+                            /*
+                            правильно было бы кинуть здесь исключение,
+                            но для упрощения сразу сделаем редирект на страницу 404
+                            */
+                            Route::ErrorPage404();
+                    }
+
+                    // создаем контроллер
+                    $controller = new $controller_name;
+                    $action = $action_name;
+
+                    if(method_exists($controller, $action))
+                    {
+                            // вызываем действие контроллера
+                            $controller->$action();
+                    }
+                    else
+                    {
+                            // здесь также разумнее было бы кинуть исключение
+                            Route::ErrorPage404();
+                    }
+                }
 	
 	}
 

@@ -1,6 +1,6 @@
 <?php
 
-class Controller_Admin extends Controller
+class Controller_Main extends ControllerAdmin
 {
     function action_index()
     {	
@@ -14,7 +14,7 @@ class Controller_Admin extends Controller
             
 	if ($this->model->isUserInGroup($_COOKIE['id'], "Administrators"))
 	{
-            $this->view->generate('admin_view.php', 'template_view.php');
+            $this->view->generate('main_view.php', 'template_view.php');
 	}
 	else
 	{
