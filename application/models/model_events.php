@@ -37,19 +37,23 @@ class Model_Events extends Model
 		$events_data['common'] = $common_data;
                 
                 //1 - family---------------------------------------------------------
-                $family_sql = "SELECT 
-                                DATE_FORMAT(event_date, '%d.%m.%Y')
-                                , event_name
-                                , datediff(concat(DATE_FORMAT(now(), '%Y'), '-', DATE_FORMAT(event_date, '%m-%d')), now())
-                                , DATE_FORMAT(now(), '%Y') - DATE_FORMAT(event_date, '%Y')
-                                , DATE_FORMAT(event_date, '%m')
-                            FROM 
-                                events
-                            WHERE
-                                id_event_type = 1
-                                AND
-                                DATE_FORMAT(event_date, '%m.%d') >= DATE_FORMAT(now(), '%m.%d')
-                            ORDER BY
+                $family_sql = "SELECT  
+                                    DATE_FORMAT(event_date, '%d.%m.%Y'),
+                                    event_name,
+                                    DAYOFYEAR(event_date) - DAYOFYEAR(NOW()) +  
+                                        IF (DAYOFYEAR(event_date) > DAYOFYEAR(NOW()),   
+                                          0,  
+                                          DAYOFYEAR(CONCAT(YEAR(NOW())+1, '-12-31'))) AS 'осталось дней',
+
+                                   DATE_FORMAT(now(), '%Y') - DATE_FORMAT(event_date, '%Y') + 
+                                       IF (DAYOFYEAR(event_date) > DAYOFYEAR(NOW()),   
+                                           0, 1) as 'возраст',
+
+                                    DATE_FORMAT(event_date, '%m')
+                                FROM events  
+                                  WHERE
+                                                                id_event_type = 1
+                                  ORDER BY
                                 DATE_FORMAT(event_date, '%m%d')
                             LIMIT 5";
                         

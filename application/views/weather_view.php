@@ -95,7 +95,7 @@
                         {
                             echo '<img src="images/weather/'.$value1['image'].'.png"width="78" height="78" style="float:left;" />';
                             echo '<p class="weather_text2">'.$value1['time_of_day'].'</p>';
-                            echo '<p class="weather_text2">'.$value1['temp_from'].'...'.$value1['temp_to'].'</p>';
+                            echo '<p class="weather_text2" style="width: 130px">'.$value1['temp_from'].'...'.$value1['temp_to'].'</p>';
                             echo '<p style="clear:both;"></p>';
                             echo "<br />";
                         }

@@ -47,11 +47,22 @@ class Model_Weather extends Model
                 if ($get_temp_from > 0) {
                     $get_temp_from = '+' . $get_temp_from.'&deg;';
                 }
+                else {
+                    $get_temp_from = $get_temp_from.'&deg;';
+                }
+                
                 if ($get_temp_to > 0) {
                     $get_temp_to = '+' . $get_temp_to.'&deg;';
                 }
-                 if ($get_temp_avg > 0) {
+                else {
+                    $get_temp_to = $get_temp_to.'&deg;';
+                }
+                
+                if ($get_temp_avg > 0) {
                     $get_temp_avg = '+' . $get_temp_avg.'&deg;';
+                }
+                else {
+                    $get_temp_avg = $get_temp_avg.'&deg;';
                 }
 
                 $out[$counter]['weather'][$i]['temp_avg'] = $get_temp_avg;
