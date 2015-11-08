@@ -23,7 +23,7 @@ mysql_select_db($db, $conn);
 //         or die('не удалось записать температуру с датчика 28.FF16FF621403');
 
 $a = array();
-$result = mysql_query("SELECT * FROM dev_keys WHERE key_type = 'temp'",$conn);
+$result = mysql_query("SELECT * FROM dev_list WHERE key_type = 'temp'",$conn);
 while ($row = mysql_fetch_array($result))
 {
         //$id_d = $row['key_addr'];
