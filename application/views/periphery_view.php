@@ -66,7 +66,7 @@
                                 </a>
                                 </li>
                                 <li>
-                                    <a href="/peripherytemp" style="text-decoration: none;">
+                                    <a href="/peripheryclim" style="text-decoration: none;">
                                         <div class="parent control_unit_container_scenarios ui-state-highlight main_div_unit scenario_window">
                                                 <div class="child">
                                                         <img class="img_style" src="images/temp.png">
