@@ -22,13 +22,15 @@
     <div class="clear"></div>
 			
     <div class="grid_3 camera_window main_div_unit">
-        <div id="ip_cam_hallway" class="camera_text">
-            Камера недоступна
+        <div id="ip_cam_hallway" class="camera_text" style="margin-top: 22px;">
+            <img src="http://localhost:8081/" width="100%">
         </div>
     </div>
     
     <div class="grid_3 camera_window main_div_unit">
-        <div class="camera_text">Камера недоступна</div>
+       <div id="ip_cam_hallway" class="camera_text" style="margin-top: 22px;">
+            <img src="http://localhost:8082/" width="100%">
+        </div>
     </div>
     <div class="grid_3 camera_window main_div_unit">
         <div class="camera_text">Камера недоступна</div>
