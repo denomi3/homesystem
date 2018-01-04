@@ -1,22 +1,22 @@
 
     <style>
-        .lightcontrol.ON {
+        .motorcontrol.ON {
             position: relative;
             background:url(/images/blinds_up.png) no-repeat;
             -moz-background-size: 100%; /* Firefox 3.6+ */
             -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
             -o-background-size: 100%; /* Opera 9.6+ */
             background-size: 100%; /* Современные браузеры */
-            box-shadow: 0px 0px 13px 16px rgba(255, 191, 0, 0.3)
+            //box-shadow: 0px 0px 13px 16px rgba(255, 191, 0, 0.3)
         }
-        .lightcontrol.OFF {position: relative;background:url(/images/blinds.png) no-repeat;
+        .motorcontrol.OFF {position: relative;background:url(/images/blinds.png) no-repeat;
             -moz-background-size: 100%; /* Firefox 3.6+ */
             -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
             -o-background-size: 100%; /* Opera 9.6+ */
             background-size: 100%; /* Современные браузеры */
         }
       
-        .lightcontrol,.tempcontrol,.devcontrol,.securcontrol {
+        .motorcontrol,.lightcontrol,.tempcontrol,.devcontrol,.securcontrol {
             position: absolute;
             height: 25px;
             width: 25px;
@@ -25,7 +25,7 @@
             text-decoration: none;
         }
     </style>
-    <div id="controls_light" style="display: block;">
+    <div id="controls_blinds" style="display: block;">
         <? 
             foreach($data as $row_)
             {
@@ -35,7 +35,7 @@
                 $dmega_addr = preg_replace("/\,$/", "", $dmega_addr);                                              
                 $dmega_title = $row_['key_title'];
                 $state = file_get_contents($dmega_addr.'?pt='.$dmega_port.'&cmd=get');
-                echo '<a id="'.$row_['key_addr'].'" title="'.$dmega_title.'" class="lightcontrol '.$state.'" style="position: absolute;left: '.$dmega_l.'px;top: '.$dmega_t.'px;" href="#"></a>';
+                echo '<a id="'.$row_['key_addr'].'" title="'.$dmega_title.'" class="motorcontrol '.$state.'" style="position: absolute;left: '.$dmega_l.'px;top: '.$dmega_t.'px;" href="#"></a>';
             }
         ?>
     </div>			
@@ -45,7 +45,7 @@
    
    $(document).ready(function(){
         function LightTimer() {
-            $(".lightcontrol").each(function() {
+            $(".motorcontrol").each(function() {
                 var _this = $(this);
                 var arr = _this.attr('id').split(':');
                     $.get('megad/getstate/', {id: arr[0], port : arr[1]}, function(data)
@@ -57,7 +57,7 @@
         setInterval(function(){ LightTimer() }, 2000);
       
        
-       $(".lightcontrol").click(function(){
+       $(".motorcontrol").click(function(){
             var lamp = $(this);
             var arr = lamp.attr('id').split(':');
             var action = 0;

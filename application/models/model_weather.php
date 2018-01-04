@@ -10,7 +10,9 @@ class Model_Weather extends Model
     ) {
         //setlocale ("LC_TIME", "ru_RU");
         
-        $data_file = 'http://export.yandex.ru/weather-ng/forecasts/' . $city . '.xml';   // Загружаем файл прогноза погоды для выбранного города
+        //$data_file = 'http://export.yandex.ru/weather-ng/forecasts/' . $city . '.xml';   // Загружаем файл прогноза погоды для выбранного города
+        //https://api.weather.yandex.ru/v1/forecast?geoid=2&lang=ru
+        $data_file = 'https://export.yandex.ru/bar/reginfo.xml?region='. $city;
         $xml = simplexml_load_file($data_file); // загружаем xml файл через simple_xml
 
         $out = array(); // Массив вывода прогноза
@@ -82,7 +84,8 @@ class Model_Weather extends Model
     }
 
     public function get_data() {
-        $w_city_id = 27612;
+        //$w_city_id = 27612;
+        $w_city_id = 213;
         // Идентификатор города (в нашем случае Москва)  - можно узнать по адресу http://weather.yandex.ru/static/cities.xml
 
         $col = 7;
