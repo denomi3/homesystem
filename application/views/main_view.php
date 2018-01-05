@@ -1,20 +1,21 @@
-<div class="container_12" style="min-width: 960px;">
-		
-			<div class="grid_8">
-				<div style="margin-top: 1%;">
-					<a href="/"><img src="images/dom_white.png" style="width: 65px;margin-right: -5px;"></a>
-					<a href="/" style="text-decoration: none;"><span class="header_style">OME SYSTEM</span></a>
-                                        <span id="demo" class="header_style" style="font-size: 2.5em;font-family: ARIAL;margin-left: 50px;"></span>
-				</div>
-			</div>
-                        <div class="grid_4">
-				<?php include("partial/partial_login_header_view.php");?>
-			</div>
-					
-			<div class="clear"></div>
-			
-                        <div class="grid_4">
-                            <a href="/weather" style="text-decoration: none;">
+    <div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<div class="page-header">
+				<a href="/"><img src="images/dom_white.png" style="width:51px;margin-right: -5px;"></a>
+				<a href="/" style="text-decoration: none;"><h1 class="header_style"><strong>omeSystem<strong></h1></a>  
+				
+				<h1 id="demo" class="header_style" style="margin-left: 50px;"><strong>14:21:32</strong></h1>		
+			</div>	
+		</div>
+		<div class="col-md-4">
+                        <?php include("partial/partial_login_header_view.php");?>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 row-devide">
+			 
+		<a href="/weather" role="button" class="btn btn-lg btn-block btn-darkblue">
 				<div class="parent control_unit_container_weather ui-state-highlight main_div_unit">
 					<div class="child">
 						<img class="img_style" src="images/weather_white.png">
@@ -25,10 +26,11 @@
 						</div>
 					</div>
 				</div>
-                            </a>
-			</div>
-                        <div class="grid_4">
-                            <a href="/periphery" style="text-decoration: none;">
+			</a>
+		</div>
+		<div class="col-md-4 row-devide">
+			 
+			<a href="/periphery" role="button" class="btn btn-block btn-lg btn-dimgray">
 				<div class="parent control_unit_container_control ui-state-highlight main_div_unit">
                                     <div class="child">
 						<img class="img_style" src="images/control_white.png">
@@ -39,10 +41,11 @@
                                                 </div>
 					</div>
 				</div>
-                            </a>
-			</div>
-			<div class="grid_4">
-                            <a href="/cameras" style="text-decoration: none;">
+			</a>
+		</div>
+		<div class="col-md-4 row-devide">
+			 
+			<a href="/cameras" role="button"  class="btn btn-lg btn-block btn-chocolate">
 				<div class="parent control_unit_container_camera ui-state-highlight main_div_unit">
 					<div class="child">
 						<img class="img_style" src="images/camera_white_1.png">
@@ -53,13 +56,13 @@
 						</div>
 					</div>
 				</div>
-                            </a>
-			</div>
-			
-			<div class="clear"></div>
-			
-			<div class="grid_4">
-                             <a href="/events" style="text-decoration: none;">
+			</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 row-devide">
+			 
+			<a href="/events" role="button"  class="btn btn-block btn-lg btn-yellowgreen">
 				<div class="parent control_unit_container_events ui-state-highlight main_div_unit">
 					<div class="child">
 						<img class="img_style" src="images/events_white.png">
@@ -70,10 +73,11 @@
 						</div>
 					</div>
 				</div>
-                            </a>
-			</div>
-                        <div class="grid_4">
-                            <a href="/scenarios" style="text-decoration: none;">
+			</a>
+		</div>
+		<div class="col-md-4 row-devide">
+			 
+		<a href="/scenarios" role="button"  class="btn btn-block btn-lg btn-scenarios">
 				<div class="parent control_unit_container_scenarios ui-state-highlight main_div_unit">
 					<div class="child">
 						<img class="img_style" src="images/scenarios_white.png">
@@ -84,10 +88,11 @@
 						</div>
 					</div>
 				</div>
-                            </a>
-			</div>
-			<div class="grid_4">
-                            <a href="/system_log" style="text-decoration: none;">
+			</a>
+		</div>
+		<div class="col-md-4 row-devide">
+			 
+			<a href="/system_log" role="button"  class="btn btn-block btn-lg btn-darkslategrey">
 				<div class="parent control_unit_container_system_log ui-state-highlight main_div_unit">
 					<div class="child">
 						<img class="img_style" src="images/system_log_white.png">
@@ -98,13 +103,13 @@
 						</div>
 					</div>
 				</div>
-                            </a>
-			</div>
-			
-			<div class="clear"></div>
-			
-			<div class="grid_4">
-                            <a href="http://vk.com/audios2740764" style="text-decoration: none;">
+			</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 row-devide">
+			 
+			<a href="#" role="button"  class="btn btn-block btn-lg btn-brown">
 				<div class="parent control_unit_container_media ui-state-highlight main_div_unit">
 					<div class="child">
 						<img class="img_style" src="images/media_white.png">
@@ -115,10 +120,11 @@
 						</div>
 					</div>
 				</div>
-                            </a>
-			</div>
-                        <div class="grid_4">
-                            <a href="/security" style="text-decoration: none;">
+			</a>
+		</div>
+		<div class="col-md-4 row-devide">
+			 
+			<a href="/security" role="button"  class="btn btn-block btn-lg btn-teal">
 				<div class="parent control_unit_container_security ui-state-highlight main_div_unit">
 					<div class="child">
 						<img class="img_style" src="images/security_white.png">
@@ -129,11 +135,11 @@
 						</div>
 					</div>
 				</div>
-                             </a>
-			</div>
-                        
-                         <div class="grid_4">
-                            <a href="#" style="text-decoration: none;">
+			</a>
+		</div>
+		<div class="col-md-4 row-devide">
+			 
+		<a href="#" role="button"  class="btn btn-block btn-lg btn-blue">
 				<div class="parent control_unit_container_locations ui-state-highlight main_div_unit">
 					<div class="child">
 						<img class="img_style" src="images/locations_white.png">
@@ -144,28 +150,10 @@
 						</div>
 					</div>
 				</div>
-                             </a>
-			</div>
-                        
-			<!--<div class="grid_4">
-                            <a href="/settings" style="text-decoration: none;">
-				<div class="parent control_unit_container_settings ui-state-highlight main_div_unit">
-					<div class="child">
-						<img class="img_style" src="images/settings_white.png">
-					</div>
-					<div class="child">
-						<div class="text_style">
-							Настройки
-						</div>
-					</div>
-				</div>
-                             </a>
-			</div>-->
-			
-			<div class="clear"></div>
-                        
-                       
-        </div>
+			</a>
+		</div>
+	</div>
+</div>
 <script>
    
             $(document).ready(function(){

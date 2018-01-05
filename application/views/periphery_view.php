@@ -1,55 +1,51 @@
-<div class="container_12" style="min-width: 960px;">
+<div class="container">
+        <style>
+             body{background-color: dimgray;}
+
+             .scenario_window {height: 50px; background-color: #808080;}
+             .scenario_text{color: white;font-size: 1.1em;font-family: arial;}
+             .scenario_text2{color: white;font-size: 1.1em;font-family: arial; margin-top: 25px;}
+             .img_style{height: 40px;}
+             .text_style {color: white;font-size: 19px;font-family: arial;}
+             .child {display: inline-block;vertical-align: middle;margin: 0 0.5em 0 0.5em;margin-top: 5px;}
+             .parent {word-wrap: break-word;text-align: left;}
+
+             .cnv{height: 527px;width: 717px; position: relative;background:url(/images/home_cheme_plan.png)  no-repeat;
+                -moz-background-size: 100%; /* Firefox 3.6+ */
+                -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+                -o-background-size: 100%; /* Opera 9.6+ */
+                background-size: 100%; /* Современные браузеры */
+                margin-top: 5px;}
+
+
+             ul#tabs li.current a div{
+                    background: darkslateblue;
+               }
+
+               ul#tabs{
+                   list-style: none;
+                   margin-left: -40px;
+               }
+        </style>
     
-    <style>
-         body{background-color: dimgray;}
-        
-         .scenario_window {height: 50px; background-color: #808080;}
-         .scenario_text{color: white;font-size: 1.1em;font-family: arial;}
-         .scenario_text2{color: white;font-size: 1.1em;font-family: arial; margin-top: 25px;}
-         .img_style{height: 40px;}
-         .text_style {color: white;font-size: 19px;font-family: arial;}
-         .child {display: inline-block;vertical-align: middle;margin: 0 0.5em 0 0.5em;margin-top: 5px;}
-         .parent {word-wrap: break-word;text-align: left;}
-         
-         .cnv{height: 527px;width: 717px; position: relative;background:url(/images/home_cheme_plan.png)  no-repeat;
-            -moz-background-size: 100%; /* Firefox 3.6+ */
-            -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
-            -o-background-size: 100%; /* Opera 9.6+ */
-            background-size: 100%; /* Современные браузеры */
-            margin-top: 5px;}
-         
-         
-         ul#tabs li.current a div{
-                background: darkslateblue;
-           }
-           
-           ul#tabs{
-               list-style: none;
-               margin-left: -40px;
-           }
-    </style>
-    
-    <div class="grid_8">
-	<div style="margin-top: 3%;">
-            <a href="/" style="text-decoration: none;">
-		<img src="images/arrow.png" style="width: 46px;float: left;margin-right: 15px;">
-		<span class="header_style" style="font-size: 2.5em;font-family: ARIAL;">Переферия</span>
-            </a>
+	<div class="row">
+		<div class="col-md-8">
+			<div class="page-header">
+				<a href="/"><img src="images/arrow.png" style="width: 36px;margin-right: 6px;margin-top: 19px;"></a>
+				<a href="/" style="text-decoration: none;"><h1 class="header_style"><strong>Переферия</strong></h1></a>  	
+			</div>	
+		</div>
+		<div class="col-md-4">
+                        <?php include("partial/partial_login_header_view.php");?>
+		</div>
 	</div>
-    </div>
-    <div class="grid_4">
-	<?php include("partial/partial_login_header_view.php");?>
-    </div>
-    <div class="clear"></div>
-    
-		
-			<div class="grid_9">    
-                            
-                            <div id="tabs-container" class="control_unit cnv">
-                            </div>
-                            
-			</div>
-                        <div class="grid_3">
+	<div class="row">
+		<div class="col-md-9 row-devide">
+                       <div id="tabs-container" class="control_unit cnv">
+                       </div>
+		</div>
+                <div class="col-md-3 row-devide">
+                          <div class="grid_3">
                             <ul id="tabs">
                                 <li class="current">
                                     <a href="/peripherylight" style="text-decoration: none;">
@@ -95,9 +91,9 @@
                                 </li>
                             </ul>
 			</div>
-					
-			<div class="clear"></div>
-			
+		</div>
+		
+	</div>
 </div>
 
 <script>

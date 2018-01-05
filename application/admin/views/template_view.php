@@ -23,9 +23,8 @@ else
     <title>ПАНЕЛЬ АДМИНИСТРИРОВАНИЯ</title>
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link href="../../css/admin_style.css" rel="stylesheet" media="screen">
+    <link href="../../bootstrap/css/admin_style.css" rel="stylesheet" media="screen">
     <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
     <div class="navbar navbar-fixed-top navbar">
